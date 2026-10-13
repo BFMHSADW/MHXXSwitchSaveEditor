@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+using System;
+using System.Windows.Forms;
 using System.Threading;
 
 namespace MHXXSaveEditor.Forms
@@ -11,8 +12,9 @@ namespace MHXXSaveEditor.Forms
 
         static public void ShowSplashScreen()
         {
-            if (splashForm != null)
+            if (splashForm != null && !splashForm.IsDisposed)
                 return;
+            splashForm = null;
             Thread thread = new Thread(new ThreadStart(ShowForm))
             {
                 IsBackground = true
@@ -23,19 +25,52 @@ namespace MHXXSaveEditor.Forms
 
         static private void ShowForm()
         {
-            splashForm = new SplashScreen();
-            Application.Run(splashForm);
+            var form = new SplashScreen();
+            splashForm = form;
+            Application.Run(form);
         }
+
         static public void CloseForm()
         {
-            splashForm.Invoke(new CloseDelegate(CloseFormInternal));
+            var form = splashForm;
+            if (form == null)
+                return;
+
+            try
+            {
+                // The splash thread may not have created the window handle yet.
+                for (int i = 0; i < 50 && form != null && !form.IsDisposed && !form.IsHandleCreated; i++)
+                    Thread.Sleep(10);
+
+                if (form.IsDisposed)
+                {
+                    splashForm = null;
+                    return;
+                }
+
+                if (form.IsHandleCreated)
+                    form.BeginInvoke(new CloseDelegate(CloseFormInternal));
+                else
+                    splashForm = null;
+            }
+            catch (ObjectDisposedException)
+            {
+                splashForm = null;
+            }
+            catch (InvalidOperationException)
+            {
+                splashForm = null;
+            }
         }
 
         static private void CloseFormInternal()
         {
-            splashForm.Close();
+            var form = splashForm;
             splashForm = null;
+            if (form != null && !form.IsDisposed)
+                form.Close();
         }
+
         public SplashScreen()
         {
             InitializeComponent();

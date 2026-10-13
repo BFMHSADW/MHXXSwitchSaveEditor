@@ -1,4 +1,4 @@
-﻿// Special thanks to APM for the MHX/MHGen Save Editor she made as this editor was largely based on
+// Special thanks to APM for the MHX/MHGen Save Editor she made as this editor was largely based on
 // Also thanks to Seth VanHeulen for his work on the save file structures for MH games
 // Last but not least, thanks to GBATemp's few threads on MHX/MHGen/MHXX save editing
 // This editor was made by Ukee from GBATemp https://gbatemp.net/threads/release-mhxx-save-editor.481210/
@@ -1576,7 +1576,6 @@ namespace MHXXSaveEditor
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            player.
         }
 
         private void ListViewPalicoEquipment_SelectedIndexChanged(object sender, EventArgs e)
