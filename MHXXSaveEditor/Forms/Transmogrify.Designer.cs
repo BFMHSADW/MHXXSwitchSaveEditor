@@ -41,7 +41,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Transmogrify To";
+            this.label1.Text = "幻化为";
             // 
             // comboBoxTransmogrify
             // 
@@ -57,7 +57,7 @@
             this.buttonSet.Name = "buttonSet";
             this.buttonSet.Size = new System.Drawing.Size(100, 30);
             this.buttonSet.TabIndex = 2;
-            this.buttonSet.Text = "Set";
+            this.buttonSet.Text = "设置";
             this.buttonSet.UseVisualStyleBackColor = true;
             this.buttonSet.Click += new System.EventHandler(this.ButtonSet_Click);
             // 
@@ -67,7 +67,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(100, 30);
             this.buttonCancel.TabIndex = 3;
-            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.Text = "取消";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
@@ -83,11 +83,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Transmogrify";
+            this.Name = "幻化";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Transmogrify";
+            this.Text = "幻化";
             this.ResumeLayout(false);
             this.PerformLayout();
 

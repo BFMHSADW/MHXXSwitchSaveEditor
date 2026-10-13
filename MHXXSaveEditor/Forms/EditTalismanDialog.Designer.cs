@@ -62,7 +62,7 @@
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Skills";
+            this.groupBox1.Text = "技能";
             // 
             // comboBoxSkillName2
             // 
@@ -89,7 +89,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Skill 2";
+            this.label2.Text = "技能 2";
             // 
             // label1
             // 
@@ -98,7 +98,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Skill 1";
+            this.label1.Text = "技能 1";
             // 
             // groupBox2
             // 
@@ -111,7 +111,7 @@
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Level";
+            this.groupBox2.Text = "等级";
             // 
             // numericUpDownSkillLevel2
             // 
@@ -154,7 +154,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 17);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Skill 2";
+            this.label3.Text = "技能 2";
             // 
             // label4
             // 
@@ -163,7 +163,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 17);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Skill 1";
+            this.label4.Text = "技能 1";
             // 
             // groupBox3
             // 
@@ -174,7 +174,7 @@
             this.groupBox3.Size = new System.Drawing.Size(200, 100);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Slots";
+            this.groupBox3.Text = "槽位";
             // 
             // numericUpDownSlots
             // 
@@ -195,7 +195,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 17);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Slots";
+            this.label7.Text = "槽位";
             // 
             // buttonSave
             // 
@@ -203,7 +203,7 @@
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(100, 30);
             this.buttonSave.TabIndex = 8;
-            this.buttonSave.Text = "Save";
+            this.buttonSave.Text = "保存";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
@@ -213,7 +213,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(100, 30);
             this.buttonCancel.TabIndex = 9;
-            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.Text = "取消";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
@@ -234,7 +234,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editing Talisman";
+            this.Text = "编辑护石";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

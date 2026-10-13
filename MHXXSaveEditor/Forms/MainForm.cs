@@ -32,6 +32,7 @@ namespace MHXXSaveEditor
         readonly int SWITCH_SAVE_SIZE = 4726152 + 36;
         readonly int MHGU_SAVE_SIZE = 4726152 + 432948;
         bool switchMode = false; //true is switch mode
+        int switchOutputSize = 4726152 + 36; // MHXX Switch by default; MHGU when loading an MHGU save
         int currentPlayer, itemSelectedSlot;
         public int equipSelectedSlot, palicoEqpSelectedSlot;
         SecondsToHHMMSS ttime = new SecondsToHHMMSS();
@@ -67,23 +68,25 @@ namespace MHXXSaveEditor
 
             if (saveFileRaw.Length == 4726152)
             {
-                MessageBox.Show($"Detected a 3DS save", "3DS");
+                MessageBox.Show($"检测到 3DS 存档", "3DS");
                 toSwitchToolStripMenuItem.Enabled = true;
                 switchMode = false;
             }
             else if (saveFileRaw.Length == SWITCH_SAVE_SIZE)
             {
-                MessageBox.Show($"Detected a MHXX Switch save", "Switch");
+                MessageBox.Show($"检测到 MHXX Switch 存档", "Switch");
                 switchMode = true;
+                switchOutputSize = SWITCH_SAVE_SIZE;
             }
             else if (saveFileRaw.Length == MHGU_SAVE_SIZE)
             {
-                MessageBox.Show($"Detected a MHGU Switch save", "Switch");
+                MessageBox.Show($"检测到 MHGU Switch 存档", "Switch");
                 switchMode = true;
+                switchOutputSize = MHGU_SAVE_SIZE;
             }
             else
             {
-                MessageBox.Show($"Invalid save format", "Error");
+                MessageBox.Show($"无效的存档格式", "错误");
                 return;
             }
 
@@ -123,7 +126,7 @@ namespace MHXXSaveEditor
             }
             if (saveFile[4] == 0 && saveFile[5] == 0 && saveFile[6] == 0)
             {
-                MessageBox.Show("No existing save slots used, please make one in-game first.", "Error");
+                MessageBox.Show("没有已使用的存档槽，请先在游戏中创建角色。", "错误");
                 return;
             }
 
@@ -195,12 +198,12 @@ namespace MHXXSaveEditor
                 saveFile = TransformToSwitchFormat();
             }
             File.WriteAllBytes(filePath, saveFile);
-            MessageBox.Show("File saved", "Saved !");
+            MessageBox.Show("文件已保存", "已保存！");
         }
 
         private byte[] TransformToSwitchFormat()
         {
-            byte[] switchSaveFile = new byte[MHGU_SAVE_SIZE];
+            byte[] switchSaveFile = new byte[switchOutputSize];
             byte[] switchHeader = saveFileRaw.Take(36).ToArray();
             switchHeader.CopyTo(switchSaveFile, 0);
             saveFile.CopyTo(switchSaveFile, 36);
@@ -209,7 +212,7 @@ namespace MHXXSaveEditor
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Made by Dawnshifter based on work of Ukee for GBATemp\nBased off APM's MHX/MHGen Save Editor\nAlso thanks to Seth VanHeulen for the Save File structure\nAnd some MHX/MHGen/MHXX hex editing threads in GBATemp", "About");
+            MessageBox.Show("作者 Dawnshifter，基于 Ukee 在 GBATemp 的工作\n基于 APM 的 MHX/MHGen 存档修改器\n感谢 Seth VanHeulen 的存档结构研究\n以及 GBATemp 上的 MHX/MHGen/MHXX 十六进制编辑讨论帖", "关于");
         }
 
         public void LoadSave()
@@ -308,8 +311,8 @@ namespace MHXXSaveEditor
                 }
                 catch
                 {
-                    MessageBox.Show("An unknown item was found at slot: " + (a + 1).ToString() + "\nYou may have an invalid item in your item box\nIf you proceed to try and edit it, you may get a crash", "Item Error");
-                    if (MessageBox.Show("Item ID: " + player.ItemId[a], "Click OK to copy this message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    MessageBox.Show("在槽位发现未知道具：" + (a + 1).ToString() + "\n道具箱中可能有无效道具\n若继续编辑可能会导致崩溃", "道具错误");
+                    if (MessageBox.Show("道具 ID: " + player.ItemId[a], "点确定复制此消息", MessageBoxButtons.OKCancel) == DialogResult.OK)
                         Clipboard.SetText("Item ID: " + player.ItemId[a]);
                     itemName = "Unknown [" + player.ItemId[a].ToString() + "]";
                 }
@@ -413,12 +416,12 @@ namespace MHXXSaveEditor
                 catch
                 {
                     string hexes = "";
-                    MessageBox.Show("An unknown equipment was found at slot: " + (a + 1).ToString() + "\nYou may have an invalid equipment in your equipment box\nIf you proceed to try and edit it, you may get a crash", "Equipment Error");
+                    MessageBox.Show("在槽位发现未知装备：" + (a + 1).ToString() + "\n装备箱中可能有无效装备\n若继续编辑可能会导致崩溃", "装备错误");
                     for(int b = 0; b <36; b++)
                     {
                         hexes += player.EquipmentInfo[(a * 36) + b].ToString("X2") + " ";
                     }
-                    if (MessageBox.Show(hexes, "Click OK to copy this message", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (MessageBox.Show(hexes, "点确定复制此消息", MessageBoxButtons.OKCancel) == DialogResult.OK)
                         Clipboard.SetText(hexes);
 
                     error = 1;
@@ -914,7 +917,7 @@ namespace MHXXSaveEditor
                     i.SubItems[2].Text = "99";
                 }
             }
-            MessageBox.Show("All item amount have been set to 99");
+            MessageBox.Show("全部道具数量已设为 99");
         }
 
         private void ButtonEditTalisman_Click(object sender, EventArgs e)
@@ -968,7 +971,7 @@ namespace MHXXSaveEditor
             }
             else
             {
-                MessageBox.Show("Please select a palico first!\nIf you don't have any, please hire one from in-game first.");
+                MessageBox.Show("请先选择一只艾露猫！\n如果没有，请先在游戏中雇佣。");
             }
         }
 
@@ -1142,7 +1145,7 @@ namespace MHXXSaveEditor
                 listViewItem.Items[i].SubItems[2].Text = "0";
             }
 
-            MessageBox.Show("Duplicate items have been removed");
+            MessageBox.Show("重复道具已清除");
         }
 
         private void RemoveAllItemsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1155,12 +1158,12 @@ namespace MHXXSaveEditor
                     i.SubItems[2].Text = "0";
                 }
             }
-            MessageBox.Show("All items have been removed");
+            MessageBox.Show("全部道具已清除");
         }
 
         private void GoToMainThreadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you wish visit the main thread?", "Visit Main Thread", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            if (MessageBox.Show("要访问主帖吗？", "访问主帖", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
             {
                 System.Diagnostics.Process.Start("https://gbatemp.net/threads/release-mhxx-save-editor.481210/");
             }
@@ -1168,7 +1171,7 @@ namespace MHXXSaveEditor
 
         private void VisitGithubPageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you wish visit Github page?", "Visit Github", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            if (MessageBox.Show("要访问 Github 页面吗？", "访问 Github", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
             {
                 System.Diagnostics.Process.Start("https://github.com/mineminemine/MHXXSaveEditor");
             }
@@ -1188,7 +1191,7 @@ namespace MHXXSaveEditor
 
             if (savefile.ShowDialog() == DialogResult.OK)
                 File.WriteAllBytes(savefile.FileName, saveFile);
-            MessageBox.Show("File saved", "Saved !");
+            MessageBox.Show("文件已保存", "已保存！");
         }
 
         private void SaveFile()
@@ -1254,19 +1257,19 @@ namespace MHXXSaveEditor
 
         private void Slot1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete this save slot?", "Delete save slot 1", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("确定要删除这个存档槽吗？", "删除存档槽 1", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 DeleteSaveSlot(1);
         }
 
         private void Slot2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete this save slot?", "Delete save slot 2", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("确定要删除这个存档槽吗？", "删除存档槽 2", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 DeleteSaveSlot(2);
         }
 
         private void Slot3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete this save slot?", "Delete save slot 3", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("确定要删除这个存档槽吗？", "删除存档槽 3", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 DeleteSaveSlot(3);
         }
 
@@ -1295,8 +1298,8 @@ namespace MHXXSaveEditor
 
             Array.Copy(Properties.Resources.CleanSave, 0, saveFile, theOffset, Properties.Resources.CleanSave.Length);
             File.WriteAllBytes(filePath, saveFile);
-            MessageBox.Show("The save slot has been deleted", "Save slot " + slotNumber +  "deleted");
-            MessageBox.Show("This program will now restart");
+            MessageBox.Show("存档槽已删除", "存档槽 " + slotNumber +  "已删除");
+            MessageBox.Show("程序即将重启");
             Application.Restart();
         }
 
@@ -1340,7 +1343,7 @@ namespace MHXXSaveEditor
 
         private void ImportFromToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to import from another item box list?", "Import Item Box", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("确定要从另一个道具箱列表导入吗？", "导入道具箱", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 OpenFileDialog ofd = new OpenFileDialog();
@@ -1396,7 +1399,7 @@ namespace MHXXSaveEditor
                     }
                 }
 
-                MessageBox.Show("Item Box has been exported to " + exportFile.FileName.ToString(), "Export Item Box");
+                MessageBox.Show("道具箱已导出到 " + exportFile.FileName.ToString(), "导出道具箱");
             }
         }
 
@@ -1438,13 +1441,13 @@ namespace MHXXSaveEditor
             {
                 File.WriteAllBytes(exportFile.FileName.ToString(), player.EquipmentInfo);
 
-                MessageBox.Show("Equipment Box has been exported to " + exportFile.FileName.ToString(), "Export Equipment Box");
+                MessageBox.Show("装备箱已导出到 " + exportFile.FileName.ToString(), "导出装备箱");
             }
         }
 
         private void ImportFromToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Warning!\nPlease make sure your equipped weapons/armor are only from Box 1-8 or you will likely get crashed in-game.\n\nAre you sure you want to import from another equipment box list?\nOnly equips in Box 9-20 will be imported", "Import Equipment Box", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("警告！\n请确保已装备的武器/防具只来自箱 1-8，否则游戏内可能崩溃。\n\n确定要从另一个装备箱列表导入吗？\n只会导入箱 9-20 中的装备", "导入装备箱", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 OpenFileDialog ofd = new OpenFileDialog();
@@ -1461,13 +1464,13 @@ namespace MHXXSaveEditor
                 byte[] equipmentLoad = File.ReadAllBytes(filePath);
                 Array.Copy(equipmentLoad, 800 * 36, player.EquipmentInfo, 800 * 36, (2000 * 36) - (800 * 36));
                 LoadEquipmentBox();
-                MessageBox.Show("Equipment has been imported, you may find them starting from slot 800-2000", "Import Equipment Box");
+                MessageBox.Show("装备已导入，可从槽位 800-2000 开始查看", "导入装备箱");
             }
         }
 
         private void toSwitchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Please select a MHXX Switch save created by your own switch (can be an empty save file).", "Switch save");
+            MessageBox.Show("请选择由你自己的 Switch 创建的 MHXX Switch 存档（可以是空存档）。", "Switch 存档");
 
             OpenFileDialog ofd = new OpenFileDialog
             {
@@ -1490,12 +1493,13 @@ namespace MHXXSaveEditor
 
             if (_saveFileRaw.Length != SWITCH_SAVE_SIZE)
             {
-                MessageBox.Show($"Not a valid switch save", "Error");
+                MessageBox.Show($"不是有效的 Switch 存档", "错误");
                 return;
             }
             switchMode = true;
+            switchOutputSize = SWITCH_SAVE_SIZE;
             saveFileRaw = _saveFileRaw;
-            MessageBox.Show($"You are now editing the switch version of this save", "Conversion complete");
+            MessageBox.Show($"你现在正在编辑此存档的 Switch 版本", "转换完成");
         }
 
         private void convertToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1506,13 +1510,13 @@ namespace MHXXSaveEditor
         private void to3DSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             switchMode = false;
-            MessageBox.Show("You are now editing the 3DS version of this save.", "Coverted to 3DS");
+            MessageBox.Show("你现在正在编辑此存档的 3DS 版本。", "已转换为 3DS");
 
         }
 
         private void mHXXToMHGUToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Please select the MHXX Switch save", "MHXX save");
+            MessageBox.Show("请选择 MHXX Switch 存档", "MHXX 存档");
 
             OpenFileDialog ofd = new OpenFileDialog
             {
@@ -1535,43 +1539,44 @@ namespace MHXXSaveEditor
 
             if (mhxxFile.Length != SWITCH_SAVE_SIZE)
             {
-                MessageBox.Show($"Not a valid switch save", "Error");
+                MessageBox.Show($"不是有效的 Switch 存档", "错误");
                 return;
             }
 
-            MessageBox.Show("Please select the MHGU Switch save", "MHGU save");
+            MessageBox.Show("请选择 MHGU Switch 存档", "MHGU 存档");
 
-            if (ofd.ShowDialog() != DialogResult.OK)
+            using (OpenFileDialog ofd2 = new OpenFileDialog
             {
-                ofd.Dispose();
-                return;
-            }
-            Cursor.Current = Cursors.WaitCursor;
-            SplashScreen.ShowSplashScreen();
-            filePath = ofd.FileName;
-            Text = string.Format("{0} [{1}]", Constants.EDITOR_VERSION, ofd.SafeFileName); // Changes app title
-            byte[] MHGU = File.ReadAllBytes(ofd.FileName); // Read all bytes from file into memory buffer
-
-            ofd.Dispose();
-
-            if (MHGU.Length != 5159100)
+                Filter = "All files (*.*)|*.*",
+                FilterIndex = 1
+            })
             {
-                MessageBox.Show($"Not a valid switch save", "Error");
-                return;
+                if (ofd2.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+                Cursor.Current = Cursors.WaitCursor;
+                SplashScreen.ShowSplashScreen();
+                filePath = ofd2.FileName;
+                Text = string.Format("{0} [{1}]", Constants.EDITOR_VERSION, ofd2.SafeFileName); // Changes app title
+                byte[] MHGU = File.ReadAllBytes(ofd2.FileName); // Read all bytes from file into memory buffer
+
+                if (MHGU.Length != MHGU_SAVE_SIZE)
+                {
+                    MessageBox.Show($"不是有效的 Switch 存档", "错误");
+                    return;
+                }
+
+                for (int i = 0; i < mhxxFile.Length; i++)
+                {
+                    MHGU[i] = mhxxFile[i];
+                }
+
+                File.WriteAllBytes(filePath, MHGU);
+                MessageBox.Show("文件已保存", "已保存！");
+
+                MessageBox.Show($"你现在正在编辑此存档的 Switch 版本", "转换完成");
             }
-
-            var x = MHGU;
-            var z = mhxxFile;
-
-            for (int i = 0; i < mhxxFile.Length; i++)
-            {
-                MHGU[i] = mhxxFile[i];
-            }
-
-            File.WriteAllBytes(filePath, MHGU);
-            MessageBox.Show("File saved", "Saved !");
-
-            MessageBox.Show($"You are now editing the switch version of this save", "Conversion complete");
         }
 
         private void button1_Click_1(object sender, EventArgs e)

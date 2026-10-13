@@ -257,7 +257,7 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Text = "文件";
             // 
             // selectSaveToolStripMenuItem
             // 
@@ -267,7 +267,7 @@
             this.toolStripMenuItemSaveSlot3});
             this.selectSaveToolStripMenuItem.Name = "selectSaveToolStripMenuItem";
             this.selectSaveToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.selectSaveToolStripMenuItem.Text = "Select Save Slot";
+            this.selectSaveToolStripMenuItem.Text = "选择存档槽";
             // 
             // toolStripMenuItemSaveSlot1
             // 
@@ -302,7 +302,7 @@
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             this.loadToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Text = "打开";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
@@ -315,7 +315,7 @@
             this.saveToolStripMenuItemSave.Enabled = false;
             this.saveToolStripMenuItemSave.Name = "saveToolStripMenuItemSave";
             this.saveToolStripMenuItemSave.Size = new System.Drawing.Size(157, 22);
-            this.saveToolStripMenuItemSave.Text = "Save";
+            this.saveToolStripMenuItemSave.Text = "保存";
             this.saveToolStripMenuItemSave.Click += new System.EventHandler(this.SaveToolStripMenuItemSave_Click);
             // 
             // saveAsToolStripMenuItem
@@ -323,7 +323,7 @@
             this.saveAsToolStripMenuItem.Enabled = false;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.saveAsToolStripMenuItem.Text = "Save As";
+            this.saveAsToolStripMenuItem.Text = "另存为";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
@@ -339,14 +339,14 @@
             this.slot3ToolStripMenuItem});
             this.deleteSaveSlotToolStripMenuItem.Name = "deleteSaveSlotToolStripMenuItem";
             this.deleteSaveSlotToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.deleteSaveSlotToolStripMenuItem.Text = "Delete Save Slot";
+            this.deleteSaveSlotToolStripMenuItem.Text = "删除存档槽";
             // 
             // slot1ToolStripMenuItem
             // 
             this.slot1ToolStripMenuItem.Enabled = false;
             this.slot1ToolStripMenuItem.Name = "slot1ToolStripMenuItem";
             this.slot1ToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.slot1ToolStripMenuItem.Text = "Slot 1";
+            this.slot1ToolStripMenuItem.Text = "槽位 1";
             this.slot1ToolStripMenuItem.Click += new System.EventHandler(this.Slot1ToolStripMenuItem_Click);
             // 
             // slot2ToolStripMenuItem
@@ -354,7 +354,7 @@
             this.slot2ToolStripMenuItem.Enabled = false;
             this.slot2ToolStripMenuItem.Name = "slot2ToolStripMenuItem";
             this.slot2ToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.slot2ToolStripMenuItem.Text = "Slot 2";
+            this.slot2ToolStripMenuItem.Text = "槽位 2";
             this.slot2ToolStripMenuItem.Click += new System.EventHandler(this.Slot2ToolStripMenuItem_Click);
             // 
             // slot3ToolStripMenuItem
@@ -362,7 +362,7 @@
             this.slot3ToolStripMenuItem.Enabled = false;
             this.slot3ToolStripMenuItem.Name = "slot3ToolStripMenuItem";
             this.slot3ToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.slot3ToolStripMenuItem.Text = "Slot 3";
+            this.slot3ToolStripMenuItem.Text = "槽位 3";
             this.slot3ToolStripMenuItem.Click += new System.EventHandler(this.Slot3ToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
@@ -374,7 +374,7 @@
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Text = "退出";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
@@ -385,7 +385,7 @@
             this.editToolStripMenuItem.Enabled = false;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Text = "编辑";
             // 
             // itemBoxToolStripMenuItem
             // 
@@ -400,20 +400,20 @@
             this.exportToToolStripMenuItem});
             this.itemBoxToolStripMenuItem.Name = "itemBoxToolStripMenuItem";
             this.itemBoxToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.itemBoxToolStripMenuItem.Text = "Item Box";
+            this.itemBoxToolStripMenuItem.Text = "道具箱";
             // 
             // maxAmountItemsToolStripMenuItem
             // 
             this.maxAmountItemsToolStripMenuItem.Name = "maxAmountItemsToolStripMenuItem";
             this.maxAmountItemsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.maxAmountItemsToolStripMenuItem.Text = "Max Amount";
+            this.maxAmountItemsToolStripMenuItem.Text = "最大数量";
             this.maxAmountItemsToolStripMenuItem.Click += new System.EventHandler(this.MaxAmountItemsToolStripMenuItem_Click);
             // 
             // setAmountToToolStripMenuItem
             // 
             this.setAmountToToolStripMenuItem.Name = "setAmountToToolStripMenuItem";
             this.setAmountToToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.setAmountToToolStripMenuItem.Text = "Set Amount To";
+            this.setAmountToToolStripMenuItem.Text = "设置数量为";
             this.setAmountToToolStripMenuItem.Click += new System.EventHandler(this.SetAmountToToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
@@ -425,14 +425,14 @@
             // 
             this.removeDuplicatesToolStripMenuItem.Name = "removeDuplicatesToolStripMenuItem";
             this.removeDuplicatesToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.removeDuplicatesToolStripMenuItem.Text = "Remove Duplicates";
+            this.removeDuplicatesToolStripMenuItem.Text = "清除重复道具";
             this.removeDuplicatesToolStripMenuItem.Click += new System.EventHandler(this.RemoveDuplicatesToolStripMenuItem_Click);
             // 
             // removeAllItemsToolStripMenuItem
             // 
             this.removeAllItemsToolStripMenuItem.Name = "removeAllItemsToolStripMenuItem";
             this.removeAllItemsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.removeAllItemsToolStripMenuItem.Text = "Remove All Items";
+            this.removeAllItemsToolStripMenuItem.Text = "清空全部道具";
             this.removeAllItemsToolStripMenuItem.Click += new System.EventHandler(this.RemoveAllItemsToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
@@ -444,14 +444,14 @@
             // 
             this.importFromToolStripMenuItem.Name = "importFromToolStripMenuItem";
             this.importFromToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.importFromToolStripMenuItem.Text = "Import From";
+            this.importFromToolStripMenuItem.Text = "从…导入";
             this.importFromToolStripMenuItem.Click += new System.EventHandler(this.ImportFromToolStripMenuItem_Click);
             // 
             // exportToToolStripMenuItem
             // 
             this.exportToToolStripMenuItem.Name = "exportToToolStripMenuItem";
             this.exportToToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.exportToToolStripMenuItem.Text = "Export To";
+            this.exportToToolStripMenuItem.Text = "导出到";
             this.exportToToolStripMenuItem.Click += new System.EventHandler(this.ExportToToolStripMenuItem_Click);
             // 
             // equipmentBoxToolStripMenuItem
@@ -461,20 +461,20 @@
             this.exportToToolStripMenuItem1});
             this.equipmentBoxToolStripMenuItem.Name = "equipmentBoxToolStripMenuItem";
             this.equipmentBoxToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.equipmentBoxToolStripMenuItem.Text = "Equipment Box";
+            this.equipmentBoxToolStripMenuItem.Text = "装备箱";
             // 
             // importFromToolStripMenuItem1
             // 
             this.importFromToolStripMenuItem1.Name = "importFromToolStripMenuItem1";
             this.importFromToolStripMenuItem1.Size = new System.Drawing.Size(141, 22);
-            this.importFromToolStripMenuItem1.Text = "Import From";
+            this.importFromToolStripMenuItem1.Text = "从…导入";
             this.importFromToolStripMenuItem1.Click += new System.EventHandler(this.ImportFromToolStripMenuItem1_Click);
             // 
             // exportToToolStripMenuItem1
             // 
             this.exportToToolStripMenuItem1.Name = "exportToToolStripMenuItem1";
             this.exportToToolStripMenuItem1.Size = new System.Drawing.Size(141, 22);
-            this.exportToToolStripMenuItem1.Text = "Export To";
+            this.exportToToolStripMenuItem1.Text = "导出到";
             this.exportToToolStripMenuItem1.Click += new System.EventHandler(this.ExportToToolStripMenuItem1_Click);
             // 
             // convertToolStripMenuItem
@@ -485,21 +485,21 @@
             this.convertToolStripMenuItem.Enabled = false;
             this.convertToolStripMenuItem.Name = "convertToolStripMenuItem";
             this.convertToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.convertToolStripMenuItem.Text = "Convert";
+            this.convertToolStripMenuItem.Text = "转换";
             this.convertToolStripMenuItem.Click += new System.EventHandler(this.convertToolStripMenuItem_Click);
             // 
             // toSwitchToolStripMenuItem
             // 
             this.toSwitchToolStripMenuItem.Name = "toSwitchToolStripMenuItem";
             this.toSwitchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.toSwitchToolStripMenuItem.Text = "To Switch";
+            this.toSwitchToolStripMenuItem.Text = "转到 Switch";
             this.toSwitchToolStripMenuItem.Click += new System.EventHandler(this.toSwitchToolStripMenuItem_Click);
             // 
             // to3DSToolStripMenuItem
             // 
             this.to3DSToolStripMenuItem.Name = "to3DSToolStripMenuItem";
             this.to3DSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.to3DSToolStripMenuItem.Text = "To 3DS";
+            this.to3DSToolStripMenuItem.Text = "转到 3DS";
             this.to3DSToolStripMenuItem.Click += new System.EventHandler(this.to3DSToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
@@ -511,13 +511,13 @@
             this.visitGithubPageToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Text = "帮助";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Text = "关于";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // toolStripSeparator6
@@ -529,14 +529,14 @@
             // 
             this.goToMainThreadToolStripMenuItem.Name = "goToMainThreadToolStripMenuItem";
             this.goToMainThreadToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.goToMainThreadToolStripMenuItem.Text = "Visit main thread";
+            this.goToMainThreadToolStripMenuItem.Text = "访问主帖";
             this.goToMainThreadToolStripMenuItem.Click += new System.EventHandler(this.GoToMainThreadToolStripMenuItem_Click);
             // 
             // visitGithubPageToolStripMenuItem
             // 
             this.visitGithubPageToolStripMenuItem.Name = "visitGithubPageToolStripMenuItem";
             this.visitGithubPageToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.visitGithubPageToolStripMenuItem.Text = "Visit Github page";
+            this.visitGithubPageToolStripMenuItem.Text = "访问 Github 页面";
             this.visitGithubPageToolStripMenuItem.Click += new System.EventHandler(this.VisitGithubPageToolStripMenuItem_Click);
             // 
             // tabControlMain
@@ -586,7 +586,7 @@
             this.generalTab.Padding = new System.Windows.Forms.Padding(2);
             this.generalTab.Size = new System.Drawing.Size(522, 266);
             this.generalTab.TabIndex = 1;
-            this.generalTab.Text = "General";
+            this.generalTab.Text = "通用";
             this.generalTab.UseVisualStyleBackColor = true;
             // 
             // buttonEditGuildCard
@@ -596,7 +596,7 @@
             this.buttonEditGuildCard.Name = "buttonEditGuildCard";
             this.buttonEditGuildCard.Size = new System.Drawing.Size(90, 24);
             this.buttonEditGuildCard.TabIndex = 22;
-            this.buttonEditGuildCard.Text = "Edit Guild Card";
+            this.buttonEditGuildCard.Text = "编辑公会名片";
             this.buttonEditGuildCard.UseVisualStyleBackColor = true;
             this.buttonEditGuildCard.Click += new System.EventHandler(this.ButtonEditGuildCard_Click);
             // 
@@ -607,7 +607,7 @@
             this.buttonEditShoutouts.Name = "buttonEditShoutouts";
             this.buttonEditShoutouts.Size = new System.Drawing.Size(90, 24);
             this.buttonEditShoutouts.TabIndex = 21;
-            this.buttonEditShoutouts.Text = "Edit Shoutouts";
+            this.buttonEditShoutouts.Text = "编辑喊话";
             this.buttonEditShoutouts.UseVisualStyleBackColor = true;
             this.buttonEditShoutouts.Click += new System.EventHandler(this.ButtonEditShoutouts_Click);
             // 
@@ -642,7 +642,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 13);
             this.label10.TabIndex = 18;
-            this.label10.Text = "Play Time (sec)";
+            this.label10.Text = "游戏时间（秒）";
             // 
             // label6
             // 
@@ -652,7 +652,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Yukumo Points";
+            this.label6.Text = "结云点数";
             // 
             // numericUpDownYuk
             // 
@@ -686,7 +686,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Pokke Points";
+            this.label7.Text = "波凯点数";
             // 
             // numericUpDownKok
             // 
@@ -708,7 +708,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 13);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Kokoto Points";
+            this.label8.Text = "科科特点数";
             // 
             // numericUpDownBhe
             // 
@@ -730,7 +730,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 13);
             this.label9.TabIndex = 10;
-            this.label9.Text = "Bherna Points";
+            this.label9.Text = "贝尔纳点数";
             // 
             // label5
             // 
@@ -740,7 +740,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Academy Points";
+            this.label5.Text = "学园点数";
             // 
             // numericUpDownWyc
             // 
@@ -774,7 +774,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Funds";
+            this.label4.Text = "金钱";
             // 
             // numericUpDownHRP
             // 
@@ -796,7 +796,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "HR Points";
+            this.label3.Text = "HR 点数";
             // 
             // numericUpDownHR
             // 
@@ -821,7 +821,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "HR Level";
+            this.label2.Text = "HR 等级";
             // 
             // charNameBox
             // 
@@ -841,7 +841,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
+            this.label1.Text = "名字";
             // 
             // playerTab
             // 
@@ -889,7 +889,7 @@
             this.playerTab.Padding = new System.Windows.Forms.Padding(2);
             this.playerTab.Size = new System.Drawing.Size(522, 266);
             this.playerTab.TabIndex = 2;
-            this.playerTab.Text = "Player";
+            this.playerTab.Text = "玩家";
             this.playerTab.UseVisualStyleBackColor = true;
             // 
             // numericUpDownClothesA
@@ -1125,7 +1125,7 @@
             this.labelClothesColor.Name = "labelClothesColor";
             this.labelClothesColor.Size = new System.Drawing.Size(42, 13);
             this.labelClothesColor.TabIndex = 22;
-            this.labelClothesColor.Text = "Clothes";
+            this.labelClothesColor.Text = "服装";
             // 
             // labelFeaturesColor
             // 
@@ -1135,7 +1135,7 @@
             this.labelFeaturesColor.Name = "labelFeaturesColor";
             this.labelFeaturesColor.Size = new System.Drawing.Size(48, 13);
             this.labelFeaturesColor.TabIndex = 21;
-            this.labelFeaturesColor.Text = "Features";
+            this.labelFeaturesColor.Text = "特征";
             // 
             // labelHairColor
             // 
@@ -1145,7 +1145,7 @@
             this.labelHairColor.Name = "labelHairColor";
             this.labelHairColor.Size = new System.Drawing.Size(26, 13);
             this.labelHairColor.TabIndex = 20;
-            this.labelHairColor.Text = "Hair";
+            this.labelHairColor.Text = "发型";
             // 
             // label25
             // 
@@ -1213,7 +1213,7 @@
             this.labelSkinColor.Name = "labelSkinColor";
             this.labelSkinColor.Size = new System.Drawing.Size(28, 13);
             this.labelSkinColor.TabIndex = 15;
-            this.labelSkinColor.Text = "Skin";
+            this.labelSkinColor.Text = "肤色";
             // 
             // numericUpDownClothing
             // 
@@ -1246,7 +1246,7 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(45, 13);
             this.label18.TabIndex = 12;
-            this.label18.Text = "Clothing";
+            this.label18.Text = "服装";
             // 
             // numericUpDownEyeColor
             // 
@@ -1279,7 +1279,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(52, 13);
             this.label19.TabIndex = 10;
-            this.label19.Text = "Eye Color";
+            this.label19.Text = "瞳色";
             // 
             // numericUpDownVoice
             // 
@@ -1312,7 +1312,7 @@
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(34, 13);
             this.label20.TabIndex = 8;
-            this.label20.Text = "Voice";
+            this.label20.Text = "声音";
             // 
             // numericUpDownFeatures
             // 
@@ -1345,7 +1345,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(48, 13);
             this.label17.TabIndex = 6;
-            this.label17.Text = "Features";
+            this.label17.Text = "特征";
             // 
             // numericUpDownFace
             // 
@@ -1378,7 +1378,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(31, 13);
             this.label16.TabIndex = 4;
-            this.label16.Text = "Face";
+            this.label16.Text = "脸型";
             // 
             // numericUpDownHair
             // 
@@ -1411,7 +1411,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(47, 13);
             this.label15.TabIndex = 2;
-            this.label15.Text = "Hairstyle";
+            this.label15.Text = "发型";
             // 
             // comboBoxGender
             // 
@@ -1433,7 +1433,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(42, 13);
             this.label14.TabIndex = 0;
-            this.label14.Text = "Gender";
+            this.label14.Text = "性别";
             // 
             // itemBoxTab
             // 
@@ -1445,7 +1445,7 @@
             this.itemBoxTab.Padding = new System.Windows.Forms.Padding(2);
             this.itemBoxTab.Size = new System.Drawing.Size(601, 266);
             this.itemBoxTab.TabIndex = 4;
-            this.itemBoxTab.Text = "Item Box";
+            this.itemBoxTab.Text = "道具箱";
             this.itemBoxTab.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -1462,7 +1462,7 @@
             this.groupBox1.Size = new System.Drawing.Size(591, 47);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Edit";
+            this.groupBox1.Text = "编辑";
             // 
             // buttonClearItemSlot
             // 
@@ -1471,7 +1471,7 @@
             this.buttonClearItemSlot.Name = "buttonClearItemSlot";
             this.buttonClearItemSlot.Size = new System.Drawing.Size(67, 24);
             this.buttonClearItemSlot.TabIndex = 6;
-            this.buttonClearItemSlot.Text = "Clear Slot";
+            this.buttonClearItemSlot.Text = "清空槽位";
             this.buttonClearItemSlot.UseVisualStyleBackColor = true;
             this.buttonClearItemSlot.Click += new System.EventHandler(this.ButtonClearItemSlot_Click);
             // 
@@ -1497,7 +1497,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(43, 13);
             this.label12.TabIndex = 4;
-            this.label12.Text = "Amount";
+            this.label12.Text = "数量";
             // 
             // label11
             // 
@@ -1507,7 +1507,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(27, 13);
             this.label11.TabIndex = 3;
-            this.label11.Text = "Item";
+            this.label11.Text = "道具";
             // 
             // comboBoxItem
             // 
@@ -1538,16 +1538,16 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Slot";
+            this.columnHeader1.Text = "槽位";
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Item Name";
+            this.columnHeader2.Text = "道具名";
             this.columnHeader2.Width = 172;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Amount";
+            this.columnHeader3.Text = "数量";
             this.columnHeader3.Width = 105;
             // 
             // equipTab
@@ -1575,7 +1575,7 @@
             this.equipTab.Padding = new System.Windows.Forms.Padding(2);
             this.equipTab.Size = new System.Drawing.Size(522, 266);
             this.equipTab.TabIndex = 3;
-            this.equipTab.Text = "Equipment";
+            this.equipTab.Text = "装备";
             this.equipTab.UseVisualStyleBackColor = true;
             // 
             // labelTransmogID
@@ -1597,7 +1597,7 @@
             this.buttonTransmogrify.Name = "buttonTransmogrify";
             this.buttonTransmogrify.Size = new System.Drawing.Size(90, 24);
             this.buttonTransmogrify.TabIndex = 18;
-            this.buttonTransmogrify.Text = "Transmogrify";
+            this.buttonTransmogrify.Text = "幻化";
             this.buttonTransmogrify.UseVisualStyleBackColor = true;
             this.buttonTransmogrify.Click += new System.EventHandler(this.ButtonTransmogrify_Click);
             // 
@@ -1646,7 +1646,7 @@
             this.buttonEditTalisman.Name = "buttonEditTalisman";
             this.buttonEditTalisman.Size = new System.Drawing.Size(90, 24);
             this.buttonEditTalisman.TabIndex = 14;
-            this.buttonEditTalisman.Text = "Edit Talisman";
+            this.buttonEditTalisman.Text = "编辑护石";
             this.buttonEditTalisman.UseVisualStyleBackColor = true;
             this.buttonEditTalisman.Click += new System.EventHandler(this.ButtonEditTalisman_Click);
             // 
@@ -1658,7 +1658,7 @@
             this.buttonEditKinsect.Name = "buttonEditKinsect";
             this.buttonEditKinsect.Size = new System.Drawing.Size(90, 24);
             this.buttonEditKinsect.TabIndex = 13;
-            this.buttonEditKinsect.Text = "Edit Kinsect";
+            this.buttonEditKinsect.Text = "编辑操虫棍虫";
             this.buttonEditKinsect.UseVisualStyleBackColor = true;
             this.buttonEditKinsect.Click += new System.EventHandler(this.ButtonEditKinsect_Click);
             // 
@@ -1682,7 +1682,7 @@
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(42, 13);
             this.label35.TabIndex = 11;
-            this.label35.Text = "Deco 3";
+            this.label35.Text = "装饰珠 3";
             // 
             // comboBoxEquipDeco2
             // 
@@ -1704,7 +1704,7 @@
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(42, 13);
             this.label36.TabIndex = 9;
-            this.label36.Text = "Deco 2";
+            this.label36.Text = "装饰珠 2";
             // 
             // comboBoxEquipDeco1
             // 
@@ -1726,7 +1726,7 @@
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(42, 13);
             this.label37.TabIndex = 7;
-            this.label37.Text = "Deco 1";
+            this.label37.Text = "装饰珠 1";
             // 
             // label34
             // 
@@ -1736,7 +1736,7 @@
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(33, 13);
             this.label34.TabIndex = 5;
-            this.label34.Text = "Level";
+            this.label34.Text = "等级";
             // 
             // label33
             // 
@@ -1746,7 +1746,7 @@
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(35, 13);
             this.label33.TabIndex = 3;
-            this.label33.Text = "Name";
+            this.label33.Text = "名字";
             // 
             // comboBoxEquipType
             // 
@@ -1767,7 +1767,7 @@
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(31, 13);
             this.label29.TabIndex = 1;
-            this.label29.Text = "Type";
+            this.label29.Text = "类型";
             // 
             // listViewEquipment
             // 
@@ -1789,16 +1789,16 @@
             // 
             // columnHeaderEquipSlot
             // 
-            this.columnHeaderEquipSlot.Text = "Slot";
+            this.columnHeaderEquipSlot.Text = "槽位";
             // 
             // columnHeaderEquipType
             // 
-            this.columnHeaderEquipType.Text = "Type";
+            this.columnHeaderEquipType.Text = "类型";
             this.columnHeaderEquipType.Width = 164;
             // 
             // columnHeaderEquipName
             // 
-            this.columnHeaderEquipName.Text = "Name";
+            this.columnHeaderEquipName.Text = "名字";
             this.columnHeaderEquipName.Width = 435;
             // 
             // palicoTab
@@ -1811,7 +1811,7 @@
             this.palicoTab.Padding = new System.Windows.Forms.Padding(2);
             this.palicoTab.Size = new System.Drawing.Size(522, 266);
             this.palicoTab.TabIndex = 6;
-            this.palicoTab.Text = "Palico";
+            this.palicoTab.Text = "艾露猫";
             this.palicoTab.UseVisualStyleBackColor = true;
             // 
             // buttonEditPalico
@@ -1821,7 +1821,7 @@
             this.buttonEditPalico.Name = "buttonEditPalico";
             this.buttonEditPalico.Size = new System.Drawing.Size(90, 24);
             this.buttonEditPalico.TabIndex = 2;
-            this.buttonEditPalico.Text = "Edit Palico";
+            this.buttonEditPalico.Text = "编辑艾露猫";
             this.buttonEditPalico.UseVisualStyleBackColor = true;
             this.buttonEditPalico.Click += new System.EventHandler(this.ButtonEditPalico_Click);
             // 
@@ -1845,16 +1845,16 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Slot";
+            this.columnHeader4.Text = "槽位";
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Name";
+            this.columnHeader5.Text = "名字";
             this.columnHeader5.Width = 164;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Forte";
+            this.columnHeader6.Text = "专长";
             this.columnHeader6.Width = 435;
             // 
             // palicoEquipTab
@@ -1872,7 +1872,7 @@
             this.palicoEquipTab.Padding = new System.Windows.Forms.Padding(2);
             this.palicoEquipTab.Size = new System.Drawing.Size(522, 266);
             this.palicoEquipTab.TabIndex = 7;
-            this.palicoEquipTab.Text = "Palico Equip";
+            this.palicoEquipTab.Text = "艾露猫装备";
             this.palicoEquipTab.UseVisualStyleBackColor = true;
             // 
             // labelTransmogPalicoID
@@ -1894,7 +1894,7 @@
             this.buttonTransmogrifyPalico.Name = "buttonTransmogrifyPalico";
             this.buttonTransmogrifyPalico.Size = new System.Drawing.Size(90, 24);
             this.buttonTransmogrifyPalico.TabIndex = 19;
-            this.buttonTransmogrifyPalico.Text = "Transmogrify";
+            this.buttonTransmogrifyPalico.Text = "幻化";
             this.buttonTransmogrifyPalico.UseVisualStyleBackColor = true;
             this.buttonTransmogrifyPalico.Click += new System.EventHandler(this.ButtonTransmogrifyPalico_Click);
             // 
@@ -1917,7 +1917,7 @@
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(35, 13);
             this.label30.TabIndex = 7;
-            this.label30.Text = "Name";
+            this.label30.Text = "名字";
             // 
             // comboBoxPalicoEqpType
             // 
@@ -1938,7 +1938,7 @@
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(31, 13);
             this.label31.TabIndex = 5;
-            this.label31.Text = "Type";
+            this.label31.Text = "类型";
             // 
             // listViewPalicoEquipment
             // 
@@ -1960,16 +1960,16 @@
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "Slot";
+            this.columnHeader7.Text = "槽位";
             // 
             // columnHeader8
             // 
-            this.columnHeader8.Text = "Type";
+            this.columnHeader8.Text = "类型";
             this.columnHeader8.Width = 164;
             // 
             // columnHeader9
             // 
-            this.columnHeader9.Text = "Name";
+            this.columnHeader9.Text = "名字";
             this.columnHeader9.Width = 435;
             // 
             // MainForm
@@ -1986,7 +1986,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MHXX Save Editor";
+            this.Text = "MHXX 存档修改器";
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
             this.tabControlMain.ResumeLayout(false);

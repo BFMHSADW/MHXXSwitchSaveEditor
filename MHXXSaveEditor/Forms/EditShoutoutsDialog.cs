@@ -124,7 +124,7 @@ namespace MHXXSaveEditor.Forms
             Buffer.BlockCopy(theShoutout, 0, toTransfer, 0, theShoutout.Length);
             Array.Copy(toTransfer, 0, MainForm.player.ManualShoutouts, selectedShoutout * Constants.SIZEOF_PER_SHOUTOUT, Constants.SIZEOF_PER_SHOUTOUT);
             listViewManualShoutouts.SelectedItems[0].SubItems[1].Text = textBoxManualShoutouts.Text;
-            MessageBox.Show("Shoutout has been set");
+            MessageBox.Show("喊话已设置");
         }
 
         private void ButtonAutomaticShoutoutSet_Click(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace MHXXSaveEditor.Forms
             Buffer.BlockCopy(theShoutout, 0, toTransfer, 0, theShoutout.Length);
             Array.Copy(toTransfer, 0, MainForm.player.AutomaticShoutouts, selectedShoutout * Constants.SIZEOF_PER_SHOUTOUT, Constants.SIZEOF_PER_SHOUTOUT);
             listViewAutomaticShoutouts.SelectedItems[0].SubItems[1].Text = textBoxAutomaticShoutouts.Text;
-            MessageBox.Show("Shoutout has been set");
+            MessageBox.Show("喊话已设置");
         }
     }
 }

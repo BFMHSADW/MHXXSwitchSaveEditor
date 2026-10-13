@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 
 using MHXXSaveEditor.Data;
@@ -12,7 +12,7 @@ namespace MHXXSaveEditor.Forms
         {
             InitializeComponent();
             this.mainForm = mainForm;
-            Text = "Editing Kinsect - " + eqpName;
+            Text = "编辑操虫棍虫 - " + eqpName;
             comboBoxKinsectType.Items.AddRange(GameConstants.KinsectNames);
 
             comboBoxKinsectType.SelectedIndex = Convert.ToInt32(mainForm.player.EquipmentInfo[(mainForm.equipSelectedSlot * 36) + 12]);

@@ -42,7 +42,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Amount";
+            this.label1.Text = "数量";
             // 
             // numericUpDownAmount
             // 
@@ -67,7 +67,7 @@
             this.buttonSet.Name = "buttonSet";
             this.buttonSet.Size = new System.Drawing.Size(100, 30);
             this.buttonSet.TabIndex = 2;
-            this.buttonSet.Text = "Set";
+            this.buttonSet.Text = "设置";
             this.buttonSet.UseVisualStyleBackColor = true;
             this.buttonSet.Click += new System.EventHandler(this.ButtonSet_Click);
             // 
@@ -77,7 +77,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(100, 30);
             this.buttonCancel.TabIndex = 3;
-            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.Text = "取消";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
@@ -97,7 +97,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Set All Item Amount to";
+            this.Text = "将全部道具数量设为";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmount)).EndInit();
             this.ResumeLayout(false);

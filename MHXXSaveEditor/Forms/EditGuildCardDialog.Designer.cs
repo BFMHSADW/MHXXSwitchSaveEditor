@@ -146,7 +146,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(630, 271);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "General";
+            this.tabPage1.Text = "通用";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // labelConvTime
@@ -174,7 +174,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 17);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Name";
+            this.label4.Text = "名字";
             // 
             // numericUpDownGCStreetPasses
             // 
@@ -197,7 +197,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Street Passes";
+            this.label3.Text = "擦肩通信";
             this.label3.Visible = false;
             // 
             // numericUpDownGCPlayTime
@@ -239,7 +239,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Guild Card ID";
+            this.label1.Text = "公会名片 ID";
             // 
             // tabPage2
             // 
@@ -262,7 +262,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(630, 271);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Quests";
+            this.tabPage2.Text = "任务";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // numericUpDownGRank
@@ -285,7 +285,7 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(56, 17);
             this.label18.TabIndex = 12;
-            this.label18.Text = "G Rank";
+            this.label18.Text = "G 级";
             // 
             // numericUpDownArena
             // 
@@ -307,7 +307,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(46, 17);
             this.label16.TabIndex = 10;
-            this.label16.Text = "Arena";
+            this.label16.Text = "竞技场";
             // 
             // numericUpDownSpecialPermit
             // 
@@ -329,7 +329,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(98, 17);
             this.label17.TabIndex = 8;
-            this.label17.Text = "Special Permit";
+            this.label17.Text = "特别许可";
             // 
             // numericUpDownHHHigh
             // 
@@ -351,7 +351,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(124, 17);
             this.label14.TabIndex = 6;
-            this.label14.Text = "Hunter Hub (High)";
+            this.label14.Text = "集会所（上位）";
             // 
             // numericUpDownHHLow
             // 
@@ -373,7 +373,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(120, 17);
             this.label15.TabIndex = 4;
-            this.label15.Text = "Hunter Hub (Low)";
+            this.label15.Text = "集会所（下位）";
             // 
             // numericUpDownVillageHigh
             // 
@@ -395,7 +395,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(93, 17);
             this.label13.TabIndex = 2;
-            this.label13.Text = "Village (High)";
+            this.label13.Text = "村庄（上位）";
             // 
             // numericUpDownVillageLow
             // 
@@ -417,7 +417,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(89, 17);
             this.label12.TabIndex = 0;
-            this.label12.Text = "Village (Low)";
+            this.label12.Text = "村庄（下位）";
             // 
             // tabPage3
             // 
@@ -434,7 +434,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(630, 271);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Weapons";
+            this.tabPage3.Text = "武器";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // numericUpDownArenaCount
@@ -470,7 +470,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 17);
             this.label8.TabIndex = 5;
-            this.label8.Text = "Arena";
+            this.label8.Text = "竞技场";
             // 
             // label7
             // 
@@ -479,7 +479,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 17);
             this.label7.TabIndex = 4;
-            this.label7.Text = "Hunter Hub";
+            this.label7.Text = "集会所";
             // 
             // label6
             // 
@@ -488,7 +488,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 17);
             this.label6.TabIndex = 3;
-            this.label6.Text = "Village";
+            this.label6.Text = "村庄";
             // 
             // numericUpDownVillageCount
             // 
@@ -510,7 +510,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 17);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Weapon";
+            this.label5.Text = "武器";
             // 
             // comboBoxWeaponType
             // 
@@ -538,7 +538,7 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(630, 271);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Monsters";
+            this.tabPage4.Text = "怪物";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // numericUpDownLarge
@@ -561,7 +561,7 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(113, 17);
             this.label23.TabIndex = 15;
-            this.label23.Text = "Largest Size (%)";
+            this.label23.Text = "最大尺寸（%）";
             // 
             // numericUpDownSmall
             // 
@@ -583,7 +583,7 @@
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(118, 17);
             this.label22.TabIndex = 13;
-            this.label22.Text = "Smallest Size (%)";
+            this.label22.Text = "最小尺寸（%）";
             // 
             // numericUpDownCaptureCount
             // 
@@ -605,7 +605,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 17);
             this.label9.TabIndex = 11;
-            this.label9.Text = "Capture";
+            this.label9.Text = "捕获";
             // 
             // label10
             // 
@@ -614,7 +614,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(26, 17);
             this.label10.TabIndex = 10;
-            this.label10.Text = "Kill";
+            this.label10.Text = "讨伐";
             // 
             // numericUpDownKillCount
             // 
@@ -636,7 +636,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 17);
             this.label11.TabIndex = 8;
-            this.label11.Text = "Monster";
+            this.label11.Text = "怪物";
             // 
             // comboBoxMonsters
             // 
@@ -663,7 +663,7 @@
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(630, 271);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Arena";
+            this.tabPage5.Text = "竞技场";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // label24
@@ -673,7 +673,7 @@
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(113, 17);
             this.label24.TabIndex = 8;
-            this.label24.Text = "Grudge Matches";
+            this.label24.Text = "仇敌对决";
             // 
             // comboBoxArenaGrade
             // 
@@ -697,7 +697,7 @@
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(48, 17);
             this.label21.TabIndex = 6;
-            this.label21.Text = "Grade";
+            this.label21.Text = "评级";
             // 
             // comboBoxArenaWeapon
             // 
@@ -716,7 +716,7 @@
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(97, 17);
             this.label20.TabIndex = 4;
-            this.label20.Text = "Weapon Type";
+            this.label20.Text = "武器种类";
             // 
             // numericUpDownBestTime
             // 
@@ -739,7 +739,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(138, 17);
             this.label19.TabIndex = 2;
-            this.label19.Text = "Best Time (seconds)";
+            this.label19.Text = "最好成绩（秒）";
             // 
             // comboBoxArena
             // 
@@ -770,21 +770,21 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Rank";
+            this.columnHeader1.Text = "等级";
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Best Time";
+            this.columnHeader2.Text = "最好成绩";
             this.columnHeader2.Width = 104;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Weapon Type";
+            this.columnHeader5.Text = "武器种类";
             this.columnHeader5.Width = 132;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Grade";
+            this.columnHeader6.Text = "评级";
             // 
             // buttonOkay
             // 
@@ -792,7 +792,7 @@
             this.buttonOkay.Name = "buttonOkay";
             this.buttonOkay.Size = new System.Drawing.Size(100, 30);
             this.buttonOkay.TabIndex = 1;
-            this.buttonOkay.Text = "OK";
+            this.buttonOkay.Text = "确定";
             this.buttonOkay.UseVisualStyleBackColor = true;
             this.buttonOkay.Click += new System.EventHandler(this.ButtonOkay_Click);
             // 
@@ -802,7 +802,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(100, 30);
             this.buttonCancel.TabIndex = 2;
-            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.Text = "取消";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
@@ -821,7 +821,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editing Guild Card";
+            this.Text = "编辑公会名片";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

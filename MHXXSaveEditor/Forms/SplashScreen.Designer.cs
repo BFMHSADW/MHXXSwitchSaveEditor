@@ -38,7 +38,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 34);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Loading your save file..\r\nPlease wait..";
+            this.label1.Text = "正在加载存档..\r\n请稍候..";
             this.label1.UseWaitCursor = true;
             // 
             // SplashScreen
@@ -55,7 +55,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Loading..";
+            this.Text = "加载中..";
             this.TopMost = true;
             this.UseWaitCursor = true;
             this.ResumeLayout(false);

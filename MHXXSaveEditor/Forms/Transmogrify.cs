@@ -1,4 +1,4 @@
-﻿using System.Windows.Forms;
+using System.Windows.Forms;
 using MHXXSaveEditor.Data;
 using System;
 
@@ -13,7 +13,7 @@ namespace MHXXSaveEditor.Forms
             InitializeComponent();
             this.mainForm = mainForm;
             this.eqpType = eqpType;
-            Text = "Transmogrifying - " + eqpName;
+            Text = "幻化 - " + eqpName;
 
             switch (eqpType)
             {

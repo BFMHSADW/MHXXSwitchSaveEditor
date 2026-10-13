@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 using System.Windows.Forms;
 using MHXXSaveEditor.Data;
@@ -17,7 +17,7 @@ namespace MHXXSaveEditor.Forms
             InitializeComponent();
             this.mainForm = mainForm;
             selectedPalico = selectedSlot;
-            Text = "Editing Palico - " + palicoName;
+            Text = "编辑艾露猫 - " + palicoName;
             comboBoxForte.Items.AddRange(GameConstants.PalicoForte);
             comboBoxTarget.Items.AddRange(GameConstants.PalicoTarget);
             LoadPalico();
@@ -786,12 +786,12 @@ namespace MHXXSaveEditor.Forms
 
             if (savefile.ShowDialog() == DialogResult.OK)
                 File.WriteAllBytes(savefile.FileName, thePalico);
-            MessageBox.Show("Palico has been exported", "Export Palico");
+            MessageBox.Show("艾露猫已导出", "导出艾露猫");
         }
 
         private void ButtonImportPalico_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to import another palico to this slot?", "Import Palico", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("确定要向此槽位导入另一只艾露猫吗？", "导入艾露猫", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 OpenFileDialog ofd = new OpenFileDialog();
@@ -808,7 +808,7 @@ namespace MHXXSaveEditor.Forms
                 byte[] thePalicoFile = File.ReadAllBytes(ofd.FileName);
                 if (thePalicoFile.Length != Constants.SIZEOF_PALICO)
                 {
-                    MessageBox.Show("This is not a Palico file.", "Error");
+                    MessageBox.Show("这不是艾露猫文件。", "错误");
                     return;
                 }
 
@@ -825,7 +825,7 @@ namespace MHXXSaveEditor.Forms
                 LoadEquippedSkills();
                 LoadLearnedActions();
                 LoadLearnedSkills();
-                MessageBox.Show("Palico file successfully imported.", "Import Palico");
+                MessageBox.Show("艾露猫文件导入成功。", "导入艾露猫");
             }
             else
                 return;

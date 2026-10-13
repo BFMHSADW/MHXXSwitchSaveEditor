@@ -64,11 +64,11 @@
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Slot";
+            this.columnHeader4.Text = "槽位";
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Shoutout";
+            this.columnHeader5.Text = "喊话";
             this.columnHeader5.Width = 618;
             // 
             // tabControl1
@@ -91,7 +91,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(810, 364);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Manual Shoutouts";
+            this.tabPage1.Text = "手动喊话";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // buttonManualShoutoutSet
@@ -100,7 +100,7 @@
             this.buttonManualShoutoutSet.Name = "buttonManualShoutoutSet";
             this.buttonManualShoutoutSet.Size = new System.Drawing.Size(75, 23);
             this.buttonManualShoutoutSet.TabIndex = 4;
-            this.buttonManualShoutoutSet.Text = "Set";
+            this.buttonManualShoutoutSet.Text = "设置";
             this.buttonManualShoutoutSet.UseVisualStyleBackColor = true;
             this.buttonManualShoutoutSet.Click += new System.EventHandler(this.ButtonManualShoutoutSet_Click);
             // 
@@ -122,7 +122,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(810, 364);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Automatic Shoutouts";
+            this.tabPage2.Text = "自动喊话";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // buttonAutomaticShoutoutSet
@@ -131,7 +131,7 @@
             this.buttonAutomaticShoutoutSet.Name = "buttonAutomaticShoutoutSet";
             this.buttonAutomaticShoutoutSet.Size = new System.Drawing.Size(75, 23);
             this.buttonAutomaticShoutoutSet.TabIndex = 5;
-            this.buttonAutomaticShoutoutSet.Text = "Set";
+            this.buttonAutomaticShoutoutSet.Text = "设置";
             this.buttonAutomaticShoutoutSet.UseVisualStyleBackColor = true;
             this.buttonAutomaticShoutoutSet.Click += new System.EventHandler(this.ButtonAutomaticShoutoutSet_Click);
             // 
@@ -161,11 +161,11 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Slot";
+            this.columnHeader1.Text = "槽位";
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Shoutout";
+            this.columnHeader2.Text = "喊话";
             this.columnHeader2.Width = 618;
             // 
             // EditShoutoutsDialog
@@ -181,7 +181,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Editing Shoutouts";
+            this.Text = "编辑喊话";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

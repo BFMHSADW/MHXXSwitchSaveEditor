@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using MHXXSaveEditor.Data;
 
@@ -12,7 +12,7 @@ namespace MHXXSaveEditor.Forms
         {
             InitializeComponent();
             this.mainForm = mainForm;
-            Text = "Editing Talisman - " + eqpName;
+            Text = "编辑护石 - " + eqpName;
             comboBoxSkillName1.Items.AddRange(GameConstants.SkillNames);
             comboBoxSkillName2.Items.AddRange(GameConstants.SkillNames);
 
@@ -26,7 +26,7 @@ namespace MHXXSaveEditor.Forms
             }
             catch
             {
-                MessageBox.Show("It is likely that this talisman you are trying to edit is invalid and will not work in-game, please remove this talisman and add in a new one.", "ERROR - Invalid Talisman");
+                MessageBox.Show("你正在编辑的护石可能无效，游戏内无法使用。请删除它并换一颗新的。", "错误 - 无效护石");
             }
             numericUpDownSlots.Value = Convert.ToInt32(mainForm.player.EquipmentInfo[(mainForm.equipSelectedSlot * 36) + 16]);
         }
