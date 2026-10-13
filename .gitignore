@@ -1,8 +1,15 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
+# Visual Studio / .NET
+################################################################################
+.vs/
+bin/
+obj/
+*.user
+*.pfx
+publish/
 
-/.vs
-/MHXXSaveEditor/bin/Debug
-/MHXXSaveEditor/obj
-/MHXXSaveEditor/bin/Release
+# Build output
+*.dll
+*.exe
+*.pdb
+!**/Resources/**
