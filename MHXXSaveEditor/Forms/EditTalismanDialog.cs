@@ -13,8 +13,8 @@ namespace MHXXSaveEditor.Forms
             InitializeComponent();
             this.mainForm = mainForm;
             Text = "编辑护石 - " + eqpName;
-            comboBoxSkillName1.Items.AddRange(GameConstants.SkillNames);
-            comboBoxSkillName2.Items.AddRange(GameConstants.SkillNames);
+            comboBoxSkillName1.Items.AddRange(GameText.SkillNames);
+            comboBoxSkillName2.Items.AddRange(GameText.SkillNames);
 
             comboBoxSkillName1.SelectedIndex = Convert.ToInt32(mainForm.player.EquipmentInfo[(mainForm.equipSelectedSlot * 36) + 12]);
             comboBoxSkillName2.SelectedIndex = Convert.ToInt32(mainForm.player.EquipmentInfo[(mainForm.equipSelectedSlot * 36) + 13]);

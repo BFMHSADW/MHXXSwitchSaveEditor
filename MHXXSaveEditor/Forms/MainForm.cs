@@ -23,6 +23,27 @@ namespace MHXXSaveEditor
         {
             InitializeComponent();
             this.Text = Constants.EDITOR_VERSION; // Changes app title
+            SetupLanguageMenu();
+        }
+
+        private void SetupLanguageMenu()
+        {
+            var langItem = new System.Windows.Forms.ToolStripMenuItem(GameText.UseChinese ? "游戏数据：中文" : "Game data: English");
+            langItem.Click += (s, e) =>
+            {
+                GameText.UseChinese = !GameText.UseChinese;
+                langItem.Text = GameText.UseChinese ? "游戏数据：中文" : "Game data: English";
+                RefreshNameLists();
+            };
+            helpToolStripMenuItem.DropDownItems.Insert(0, langItem);
+        }
+
+        private void RefreshNameLists()
+        {
+            comboBoxItem.Items.Clear();
+            comboBoxItem.Items.AddRange(GameText.ItemNames);
+            if (saveFile != null)
+                LoadItemBox();
         }
 
         public Player player = new Player();
@@ -307,7 +328,7 @@ namespace MHXXSaveEditor
             {
                 try
                 {
-                    itemName = GameConstants.ItemNameList[Convert.ToInt32(player.ItemId[a])];
+                    itemName = GameText.ItemNames[Convert.ToInt32(player.ItemId[a])];
                 }
                 catch
                 {
@@ -327,7 +348,7 @@ namespace MHXXSaveEditor
             listViewItem.EndUpdate();
             listViewItem.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             listViewItem.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            comboBoxItem.Items.AddRange(GameConstants.ItemNameList);
+            comboBoxItem.Items.AddRange(GameText.ItemNames);
         }
 
         public void LoadEquipmentBox()
@@ -587,7 +608,7 @@ namespace MHXXSaveEditor
             {
                 int iteration = Convert.ToInt32(i.SubItems[0].Text) - 1;
                 
-                player.ItemId[iteration] = Array.IndexOf(GameConstants.ItemNameList, i.SubItems[1].Text).ToString();
+                player.ItemId[iteration] = Array.IndexOf(GameText.ItemNames, i.SubItems[1].Text).ToString();
                 player.ItemCount[iteration] = i.SubItems[2].Text;
             }
             for (int a = 2299; a >= 0; a--)
@@ -648,7 +669,7 @@ namespace MHXXSaveEditor
                 return;
             else
             {
-                listViewItem.SelectedItems[0].SubItems[1].Text = GameConstants.ItemNameList[Array.IndexOf(GameConstants.ItemNameList, comboBoxItem.Text)];
+                listViewItem.SelectedItems[0].SubItems[1].Text = GameText.ItemNames[Array.IndexOf(GameText.ItemNames, comboBoxItem.Text)];
 
                 if (listViewItem.SelectedItems[0].SubItems[2].Text == "0" && listViewItem.SelectedItems[0].SubItems[1].Text != "-----")
                 {
@@ -662,7 +683,7 @@ namespace MHXXSaveEditor
                 }
 
                 player.ItemCount[itemSelectedSlot] = listViewItem.SelectedItems[0].SubItems[2].Text;
-                player.ItemId[itemSelectedSlot] = Array.IndexOf(GameConstants.ItemNameList, comboBoxItem.Text).ToString();
+                player.ItemId[itemSelectedSlot] = Array.IndexOf(GameText.ItemNames, comboBoxItem.Text).ToString();
             }
         }
 
@@ -1363,7 +1384,7 @@ namespace MHXXSaveEditor
                 foreach (ListViewItem item in listViewItem.Items)
                 {
                     string[] theItem = theItemBoxFile[a].Split(',');
-                    item.SubItems[1].Text = GameConstants.ItemNameList[int.Parse(theItem[0])];
+                    item.SubItems[1].Text = GameText.ItemNames[int.Parse(theItem[0])];
                     if (int.Parse(theItem[1]) > 99)
                         item.SubItems[2].Text = "99";
                     else if (int.Parse(theItem[1]) < 0)
@@ -1392,7 +1413,7 @@ namespace MHXXSaveEditor
                 {
                     foreach (ListViewItem item in listViewItem.Items)
                     {
-                        id = Array.IndexOf(GameConstants.ItemNameList, item.SubItems[1].Text).ToString();
+                        id = Array.IndexOf(GameText.ItemNames, item.SubItems[1].Text).ToString();
                         amount = item.SubItems[2].Text;
 
                         tw.WriteLine(id + "," + amount);

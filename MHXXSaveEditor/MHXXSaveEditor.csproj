@@ -13,6 +13,8 @@
     <LangVersion>latest</LangVersion>
     <SupportedOSPlatformVersion>6.1</SupportedOSPlatformVersion>
     <NoWarn>$(NoWarn);CA1416</NoWarn>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ForceDesignerDpiUnaware>false</ForceDesignerDpiUnaware>
   </PropertyGroup>
 
   <ItemGroup>
