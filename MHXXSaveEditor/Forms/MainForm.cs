@@ -58,112 +58,84 @@ namespace MHXXSaveEditor
         public int equipSelectedSlot, palicoEqpSelectedSlot;
         SecondsToHHMMSS ttime = new SecondsToHHMMSS();
 
+        /// <summary>Pick a file and return its bytes, or null if cancelled.</summary>
+        private byte[] PickSaveFile(string title, out string path, out string name)
+        {
+            path = null;
+            name = null;
+            using (var ofd = new OpenFileDialog { Title = title, Filter = "All files (*.*)|*.*" })
+            {
+                if (ofd.ShowDialog() != DialogResult.OK)
+                    return null;
+                path = ofd.FileName;
+                name = ofd.SafeFileName;
+                return File.ReadAllBytes(ofd.FileName);
+            }
+        }
+
         private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStripMenuItemSaveSlot1.Enabled = false;
-            toolStripMenuItemSaveSlot2.Enabled = false;
-            toolStripMenuItemSaveSlot3.Enabled = false;
-            slot1ToolStripMenuItem.Enabled = false;
-            slot2ToolStripMenuItem.Enabled = false;
-            slot3ToolStripMenuItem.Enabled = false;
-            convertToolStripMenuItem.Enabled = false;
-
-            OpenFileDialog ofd = new OpenFileDialog
-            {
-                Filter = "All files (*.*)|*.*",
-                FilterIndex = 1
-            };
-
-            if (ofd.ShowDialog() != DialogResult.OK)
-            {
-                ofd.Dispose();
+            var raw = PickSaveFile("打开存档", out filePath, out var safeName);
+            if (raw == null)
                 return;
-            }
-            Cursor.Current = Cursors.WaitCursor;
-            SplashScreen.ShowSplashScreen();
-            filePath = ofd.FileName;
-            Text = string.Format("{0} [{1}]", Constants.EDITOR_VERSION, ofd.SafeFileName); // Changes app title
-            saveFileRaw = File.ReadAllBytes(ofd.FileName); // Read all bytes from file into memory buffer
-            
-            ofd.Dispose();
 
-            if (saveFileRaw.Length == 4726152)
+            Cursor.Current = Cursors.WaitCursor;
+            Text = string.Format("{0} [{1}]", Constants.EDITOR_VERSION, safeName);
+            saveFileRaw = raw;
+
+            if (raw.Length == 4726152) // 3DS MHXX
             {
-                MessageBox.Show($"检测到 3DS 存档", "3DS");
-                toSwitchToolStripMenuItem.Enabled = true;
+                MessageBox.Show("检测到 3DS 存档", "3DS");
                 switchMode = false;
+                switchOutputSize = SWITCH_SAVE_SIZE;
+                toSwitchToolStripMenuItem.Enabled = true;
             }
-            else if (saveFileRaw.Length == SWITCH_SAVE_SIZE)
+            else if (raw.Length == SWITCH_SAVE_SIZE)
             {
-                MessageBox.Show($"检测到 MHXX Switch 存档", "Switch");
+                MessageBox.Show("检测到 MHXX Switch 存档", "Switch");
                 switchMode = true;
                 switchOutputSize = SWITCH_SAVE_SIZE;
             }
-            else if (saveFileRaw.Length == MHGU_SAVE_SIZE)
+            else if (raw.Length == MHGU_SAVE_SIZE)
             {
-                MessageBox.Show($"检测到 MHGU Switch 存档", "Switch");
+                MessageBox.Show("检测到 MHGU Switch 存档", "Switch");
                 switchMode = true;
                 switchOutputSize = MHGU_SAVE_SIZE;
             }
             else
             {
-                MessageBox.Show($"无效的存档格式", "错误");
+                MessageBox.Show("无效的存档格式", "错误");
+                Cursor.Current = Cursors.Default;
                 return;
             }
 
-            if(switchMode)
-            {
-                saveFile = saveFileRaw.Skip(36).ToArray();
-            } else
-            {
-                saveFile = saveFileRaw;
-            }
+            saveFile = switchMode ? saveFileRaw.Skip(36).ToArray() : saveFileRaw;
 
-            // To see which character slots are enabled
-            if (saveFile[4] == 1) // First slot
-            {
-                currentPlayer = 1;
-                toolStripMenuItemSaveSlot1.Enabled = true;
-                toolStripMenuItemSaveSlot1.Checked = true;
-                slot1ToolStripMenuItem.Enabled = true;
-            }
-            if (saveFile[5] == 1) // Second slot
-            {
-                if (currentPlayer != 1)
-                {
-                    currentPlayer = 2;
-                }
-                toolStripMenuItemSaveSlot2.Enabled = true;
-                slot2ToolStripMenuItem.Enabled = true;
-            }
-            if (saveFile[6] == 1) // Third slot
-            {
-                if (currentPlayer != 1 && currentPlayer != 2)
-                {
-                    currentPlayer = 3;
-                }
-                toolStripMenuItemSaveSlot3.Enabled = true;
-                slot3ToolStripMenuItem.Enabled = true;
-            }
-            if (saveFile[4] == 0 && saveFile[5] == 0 && saveFile[6] == 0)
+            bool slot1 = saveFile[4] == 1, slot2 = saveFile[5] == 1, slot3 = saveFile[6] == 1;
+            if (!slot1 && !slot2 && !slot3)
             {
                 MessageBox.Show("没有已使用的存档槽，请先在游戏中创建角色。", "错误");
+                Cursor.Current = Cursors.Default;
                 return;
             }
+            currentPlayer = slot1 ? 1 : (slot2 ? 2 : 3);
+            toolStripMenuItemSaveSlot1.Enabled = slot1;
+            toolStripMenuItemSaveSlot2.Enabled = slot2;
+            toolStripMenuItemSaveSlot3.Enabled = slot3;
+            toolStripMenuItemSaveSlot1.Checked = slot1;
+            slot1ToolStripMenuItem.Enabled = slot1;
+            slot2ToolStripMenuItem.Enabled = slot2;
+            slot3ToolStripMenuItem.Enabled = slot3;
 
-            saveToolStripMenuItemSave.Enabled = true; // Enables the save toolstrip once save is loaded
+            saveToolStripMenuItemSave.Enabled = true;
             editToolStripMenuItem.Enabled = true;
             saveAsToolStripMenuItem.Enabled = true;
             tabControlMain.Enabled = true;
             convertToolStripMenuItem.Enabled = true;
 
-            // Extract data from save file
-            var ext = new DataExtractor();
-            ext.GetInfo(saveFile, currentPlayer, player);
-
-            LoadSave(); // Load save file data into editor
+            new DataExtractor().GetInfo(saveFile, currentPlayer, player);
+            LoadSave();
             Cursor.Current = Cursors.Default;
-            SplashScreen.CloseForm();
         }
 
         private void ToolStripMenuItemSaveSlot1_Click(object sender, EventArgs e)
@@ -1491,117 +1463,57 @@ namespace MHXXSaveEditor
 
         private void toSwitchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("请选择由你自己的 Switch 创建的 MHXX Switch 存档（可以是空存档）。", "Switch 存档");
-
-            OpenFileDialog ofd = new OpenFileDialog
-            {
-                Filter = "All files (*.*)|*.*",
-                FilterIndex = 1
-            };
-
-            if (ofd.ShowDialog() != DialogResult.OK)
-            {
-                ofd.Dispose();
+            var raw = PickSaveFile("选择 MHXX Switch 模板存档", out filePath, out var safeName);
+            if (raw == null)
                 return;
-            }
-            Cursor.Current = Cursors.WaitCursor;
-            SplashScreen.ShowSplashScreen();
-            filePath = ofd.FileName;
-            Text = string.Format("{0} [{1}]", Constants.EDITOR_VERSION, ofd.SafeFileName); // Changes app title
-            byte[] _saveFileRaw = File.ReadAllBytes(ofd.FileName); // Read all bytes from file into memory buffer
 
-            ofd.Dispose();
-
-            if (_saveFileRaw.Length != SWITCH_SAVE_SIZE)
+            if (raw.Length != SWITCH_SAVE_SIZE)
             {
-                MessageBox.Show($"不是有效的 Switch 存档", "错误");
+                MessageBox.Show("不是有效的 Switch 存档", "错误");
                 return;
             }
             switchMode = true;
             switchOutputSize = SWITCH_SAVE_SIZE;
-            saveFileRaw = _saveFileRaw;
-            MessageBox.Show($"你现在正在编辑此存档的 Switch 版本", "转换完成");
+            saveFileRaw = raw;
+            Text = string.Format("{0} [{1}]", Constants.EDITOR_VERSION, safeName);
+            MessageBox.Show("你现在正在编辑此存档的 Switch 版本", "转换完成");
         }
 
         private void convertToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void to3DSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             switchMode = false;
             MessageBox.Show("你现在正在编辑此存档的 3DS 版本。", "已转换为 3DS");
-
         }
 
         private void mHXXToMHGUToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("请选择 MHXX Switch 存档", "MHXX 存档");
-
-            OpenFileDialog ofd = new OpenFileDialog
-            {
-                Filter = "All files (*.*)|*.*",
-                FilterIndex = 1
-            };
-
-            if (ofd.ShowDialog() != DialogResult.OK)
-            {
-                ofd.Dispose();
+            var mhxx = PickSaveFile("选择 MHXX Switch 存档", out _, out _);
+            if (mhxx == null)
                 return;
-            }
-            Cursor.Current = Cursors.WaitCursor;
-            SplashScreen.ShowSplashScreen();
-            filePath = ofd.FileName;
-            Text = string.Format("{0} [{1}]", Constants.EDITOR_VERSION, ofd.SafeFileName); // Changes app title
-            byte[] mhxxFile = File.ReadAllBytes(ofd.FileName); // Read all bytes from file into memory buffer
-
-            ofd.Dispose();
-
-            if (mhxxFile.Length != SWITCH_SAVE_SIZE)
+            if (mhxx.Length != SWITCH_SAVE_SIZE)
             {
-                MessageBox.Show($"不是有效的 Switch 存档", "错误");
+                MessageBox.Show("不是有效的 Switch 存档", "错误");
                 return;
             }
 
-            MessageBox.Show("请选择 MHGU Switch 存档", "MHGU 存档");
-
-            using (OpenFileDialog ofd2 = new OpenFileDialog
+            var mhgu = PickSaveFile("选择 MHGU Switch 存档", out filePath, out var safeName);
+            if (mhgu == null)
+                return;
+            if (mhgu.Length != MHGU_SAVE_SIZE)
             {
-                Filter = "All files (*.*)|*.*",
-                FilterIndex = 1
-            })
-            {
-                if (ofd2.ShowDialog() != DialogResult.OK)
-                {
-                    return;
-                }
-                Cursor.Current = Cursors.WaitCursor;
-                SplashScreen.ShowSplashScreen();
-                filePath = ofd2.FileName;
-                Text = string.Format("{0} [{1}]", Constants.EDITOR_VERSION, ofd2.SafeFileName); // Changes app title
-                byte[] MHGU = File.ReadAllBytes(ofd2.FileName); // Read all bytes from file into memory buffer
-
-                if (MHGU.Length != MHGU_SAVE_SIZE)
-                {
-                    MessageBox.Show($"不是有效的 Switch 存档", "错误");
-                    return;
-                }
-
-                for (int i = 0; i < mhxxFile.Length; i++)
-                {
-                    MHGU[i] = mhxxFile[i];
-                }
-
-                File.WriteAllBytes(filePath, MHGU);
-                MessageBox.Show("文件已保存", "已保存！");
-
-                MessageBox.Show($"你现在正在编辑此存档的 Switch 版本", "转换完成");
+                MessageBox.Show("不是有效的 Switch 存档", "错误");
+                return;
             }
-        }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
+            // Overlay the MHXX body onto the MHGU template, keep MHGU tail
+            Buffer.BlockCopy(mhxx, 0, mhgu, 0, mhxx.Length);
+            File.WriteAllBytes(filePath, mhgu);
+            Text = string.Format("{0} [{1}]", Constants.EDITOR_VERSION, safeName);
+            MessageBox.Show("文件已保存，你现在正在编辑此存档的 Switch 版本", "转换完成");
         }
 
         private void ListViewPalicoEquipment_SelectedIndexChanged(object sender, EventArgs e)
